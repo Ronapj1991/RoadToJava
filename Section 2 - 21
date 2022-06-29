@@ -1,0 +1,69 @@
+
+public class Machine {
+	
+	private String name = "Machine Type 0";
+	
+	public void start() {
+		System.out.println("Machine Starting...");
+	}
+
+	public void stop() {
+		System.out.println("Stopped");
+	}
+}
+
+
+
+
+public class Car extends Machine { // car is a child class of Machine
+
+	public void wipeWindshield() {
+		System.out.println("Wiper on..");
+	}
+	
+	//1-Right click body of class
+	//2 - click "Source"
+	//3 - click Override/implement methods...
+	//this is the parent class version's start() method
+	
+	@Override //it will check if it really is an override 
+	public void start() {
+		super.start();
+	}
+	
+	public void showInfo() {
+		System.out.println("Car name: " + name);
+		// error is given because in Machine class name is initialized as "private"
+		// private String name = "Machine Type 0";
+		// "protected" means that thr variable can be accessed anywhere within the package and also from any child class
+	}
+	
+}
+
+
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		
+		Machine mach1 = new Machine();
+		
+		System.out.println("For machine");
+		
+		mach1.start();
+		mach1.stop();
+		
+		System.out.println();
+		
+		Car car1 = new Car();
+		
+		System.out.println("This for car");
+		
+		car1.start();
+		car1.wipeWindshield();
+		car1.stop();
+		
+	}
+
+}
