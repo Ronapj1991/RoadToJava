@@ -1,0 +1,43 @@
+import ocean.Fish;
+import ocean.plants.Seaweed;
+
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Fish fish1 = new Fish();
+		Seaweed sweed1 = new Seaweed();
+		
+	}
+
+}
+
+
+package ocean;
+
+public class Fish {
+
+}
+
+
+package ocean.plants;
+
+public class Seaweed {
+
+}
+
+
+
+package ocean.plants;
+
+public class Algae {
+
+}
+
+
+package com.mywebsite.oceangame;
+
+public class Aquarium {
+
+}
