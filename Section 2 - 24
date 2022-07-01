@@ -1,0 +1,76 @@
+
+public class Plant {
+	//bad practice
+	public String name;
+	
+	//acceptable because it's final
+	public final static int ID = 0;
+	
+	//private means accessible only within the class
+	private String type;
+	
+	//protected means the variable is accessible throughoutn the child classes
+	protected String size;
+	
+	//no access level modifier - can be accessed from within the package
+	int height;
+	
+	public Plant() {
+		this.name = "Freddy";
+		
+		this.type = "plant";
+		
+		this.size = "medium";
+	}
+}
+
+
+
+public class Oak extends Plant {
+	
+	public Oak() {
+		// type = "tree"
+		//will not work because type is private
+		
+		this.size = "large"; //works because size is "protected"
+	}
+	
+}
+
+
+
+public class Field {
+
+	private Plant plant = new Plant();
+	
+	public Field() {
+		System.out.println(plant.size);
+		//works - Field is in the same package as Plant
+	}
+	
+}
+
+
+
+/*
+ * private -- only within the same class
+ * public -- from anywhere
+ * protected -- same class, sublass and same package
+ * no modifier -- only within the same package
+ */
+
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		Plant plant1 = new Plant();
+		
+		System.out.println(plant1.name);
+		System.out.println(plant1.ID);
+		//System.out.println(plant.type); wont work becayse type is private
+		System.out.println(plant1.size);
+	
+	}
+
+}
