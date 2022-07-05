@@ -1,0 +1,44 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+
+class Animal {
+	
+}
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		//Before Java 5
+		ArrayList list = new ArrayList();
+		
+		list.add("apple");
+		list.add("banana");
+		list.add("orange");
+		
+		String fruit = (String) list.get(0);
+		
+		System.out.println(fruit);
+		
+		
+		//Modern Style
+		
+		ArrayList<String> list2 = new ArrayList<String>();
+		
+		list2.add("cat");
+		list2.add("dog");
+		list2.add("horse");
+		
+		String animal = list2.get(2);
+		
+		System.out.println(animal);
+		
+		
+		//There can be more than one type of argument
+		HashMap<Integer, String> map = new HashMap<Integer, String>();
+		
+		
+		ArrayList<Animal> list3 = new ArrayList<>();
+		
+	}
+}
