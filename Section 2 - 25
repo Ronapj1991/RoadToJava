@@ -1,0 +1,58 @@
+//Takeaway is that in latest versions of Java, child classes have access to their parent's methods
+
+public class App {
+
+	public static void main(String[] args) {
+		
+		 Plant plant1 = new Plant();
+		 Tree tree1 = new Tree();
+		 
+		 
+		 Plant plant2 = tree1;
+		 Tree tree2 = tree1;
+		 
+		 plant2.grow();
+		 
+		 tree1.shedLeaves();
+		 plant2.shedLeaves();// this now works
+		 
+		 Plant plant3;
+		 
+		 //plant3.grow(); doesn't work
+		 doGrow(tree1);
+		 
+		 tree2.shedLeaves();//this also works
+	}
+	
+	public static void doGrow(Plant plant) {
+		plant.grow();
+	}
+
+}
+
+
+
+public class Plant {
+	
+	public void grow() {
+		System.out.println("Plant growing");
+	}
+	
+	public void shedLeaves() {
+		System.out.println("Leaves shedding..");
+	}
+	
+	
+}
+
+
+public class Tree extends Plant {
+
+	@Override
+	public void grow() {
+		System.out.println("Tree growing..");
+	}
+	
+	
+	
+}
