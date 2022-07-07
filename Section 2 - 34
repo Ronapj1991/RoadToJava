@@ -1,0 +1,34 @@
+
+
+public class App {
+
+	public static void main(String[] args) {
+
+		//Runtime errors are exceptions that only appear when the code is ran
+		
+		//Exzmple 1 - divide by 0
+		
+		//Example 2 - performing a method on empty string
+		
+		String text;
+		
+		//System.out.println(text.length());
+		
+		//Example 3 - out of bounds
+		String[] texts = {"one", "two", "three"};
+		
+		//System.out.println(texts[3]);
+		
+		
+		//What to do?
+		try {
+			
+			System.out.println(texts[3]);
+			
+		} catch (Exception e) {
+			System.out.println(e);;
+		}
+		
+	}
+
+}
